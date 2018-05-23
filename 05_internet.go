@@ -14,6 +14,9 @@ func main() {
 		panic(err)
 	}
 	conn.Write([]byte("GET / HTTP/1.0¥r¥nHost: ascii.jp¥r¥n¥r¥n"))
+
+	// サーバから返ってきたレスポンスを画面に出力する
+	// 出力できない
 	io.Copy(os.Stdout, conn)
 
 }
